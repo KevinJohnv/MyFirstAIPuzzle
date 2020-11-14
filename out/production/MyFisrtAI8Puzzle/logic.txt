@@ -1,0 +1,54 @@
+/Step 1: Create a random 3x3 matrix that contains unique numbers 0-8 in each cell
+/Step 2: Check to see if the matrix is solvable with the logic from GeeksToGeeks. If Solvable go to step 3 else clear 3x3 and go to step 1
+/Step 3: Find the 0 in the 3x3
+/Step 4: Look LEFT of 0 from the original matrix, if it exist create a PossibleMove with the 0 cell moved there. Else go to step 8
+/Step 5: Take the first cell
+/Step 6: Calculate the manhattan distance of selected cell and add the value to LHN
+/Step 7: Move to the next cell and repeat step 6. If there is no next cell add the PossibleMove object to the moveList
+ and unusedList array. Then go to Step 8
+/Step 8: Look UP of 0 from the original matrix, if it exist create a PossibleMove with the 0 cell moved there. Else go step 12
+/Step 9: Take the first cell
+/Step 10: Calculate the manhattan distance of selected cell and add the value to UHN
+/Step 11: Move to the next cell and repeat step 10. If there is no next cell add the PossibleMove
+object to the moveList and unusedList array. Then go to Step 12
+/Step 12: Look RIGHT of 0 from the original matrix, if it exist create PossibleMove with the 0 cell moved there. Else go step 16
+/Step 13: Take the first cell
+/Step 14: Calculate the manhattan distance of selected cell and add the value to RHN
+/Step 15: Move to the next cell and repeat step 14. If there is no next cell add the PossibleMove object to the moveList
+ and unusedList array. Then go to Step 16
+/Step 16: Look DOWN of 0 from the original matrix, if it exist create a PossibleMove with the 0 cell moved there. Else go step 20
+/Step 17: Take the first cell
+/Step 18: Calculate the manhattan distance of selected cell and add the value to DHN
+/Step 19: Move to the next cell and repeat step 10. If there is no next cell add the PossibleMove object to the moveList
+ and unusedList array. Then go to Step 20
+/Step 20: Calculate the f(n) of LHN UHN RHN DHN
+/Step 21: Store the PossibleMoves in a common array Moves
+Step 22: Store the PossibleMoves in a common Unused
+Step 23: Take the the PossibleMoves with the lowest f(n) from Unused
+Step 24: If the lowest f(n) is not in the highest move step send a message saying that the system is going back to step _
+and continue to step 25. Else continue to step 25
+Step 25: if the h(n) of the PossibleMoves object is 0 then create a message with the move list
+needed to reach the solution. Else create a message saying that system is choosing _ move. Go to step 4 with new
+selected matrix and delete the PossibleMove from the unused array.
+
+Objects:
+- PossibleMoves (node)
+    Vars
+ - matrix(2d matrix)
+ - step(int)
+ - hN(int)
+ - fN(int)
+ - previousMove (PossibleMove)
+ - used(bool)
+ - moveCompleted(string)
+    Functions
+ - hnCalc
+ - fnCalc
+ - used
+ -address
+
+Functions:
+- randomMatrixGenerator
+- isSolvable (GeeksForGeeks)
+- manhattenCalculator
+- solved move list
